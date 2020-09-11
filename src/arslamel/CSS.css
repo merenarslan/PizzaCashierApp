@@ -1,0 +1,29 @@
+/*
+    CSS.css
+    Author: Melih Eren Arslan
+    Date: 07.31.2020
+
+    Description
+    CSS document for FXMLPizza.fxml
+ 
+    @author Melih Eren Arslan
+ */
+/* 
+    Created on : Jul. 30, 2020, 10:54:20 p.m.
+    Author     : melih
+*/
+
+.Title {
+   -fx-font-weight: bold;
+   -fx-font-style: italic;
+   -fx-font-size : 20px;
+   -fx-font-family : 'serif'
+}
+
+.Border {
+    
+    -fx-border-color : black;
+    -fx-border-style : solid;
+    
+}
+

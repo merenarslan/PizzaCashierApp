@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.*?>
+<?import java.net.*?>
+
+
+<BorderPane id="pane" prefHeight="575" prefWidth="575.0" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="arslamel.PizzaController">
+            
+    
+    <fx:define>
+        <Insets fx:id="nodeMargins" top ="15" right="20" bottom="15" left="20" />
+    </fx:define>
+    <fx:define>
+        <ToggleGroup fx:id = "grpSelection"  />         
+    </fx:define>
+    <fx:define>
+        <ToggleGroup fx:id = "grpSelection2"  />         
+    </fx:define>
+    
+
+    <top>
+        <VBox alignment="CENTER" spacing="5" >
+        <MenuBar>
+                    <Menu fx:id="mMain" text="_File" >
+                        <MenuItem text="_Exit" onAction="#exit"></MenuItem>
+                    </Menu>
+        </MenuBar>
+       
+        <Label fx:id="lblPizza" text="Pizzeria Assigment" styleClass="Title" BorderPane.margin="$nodeMargins" />
+        </VBox>      
+                                                                              
+         
+               
+                   
+  
+             
+    </top>
+    <center>
+          <HBox alignment="CENTER" BorderPane.margin="$nodeMargins" spacing="40" >
+          
+                <VBox BorderPane.margin="$nodeMargins" styleClass="Border">                                       
+                    <padding>
+                        <Insets top ="10" right="10" bottom="5" left="10"/>                            
+                    </padding>                                                          
+                    <children>
+                                             
+                        <Label fx:id="lblSize" text="Pizza Size" styleClass="Title"  />
+                        <RadioButton fx:id = "optSmall" text = "_Small" toggleGroup = "$grpSelection"  />
+                        <RadioButton fx:id = "optMedium" text = "_Medium" toggleGroup = "$grpSelection"   />
+                        <RadioButton fx:id = "optLarge" text = "_Large " toggleGroup = "$grpSelection"  />
+                        <TextField fx:id = "txfNOfPizza" promptText="Enter number of pizza" />                        
+                    </children>
+                </VBox>           
+    
+          
+            
+                      
+                <VBox BorderPane.margin="$nodeMargins" styleClass="Border" >                        
+                    <padding>
+                        <Insets top ="10" right="10" bottom="10" left="10"/>
+                    </padding>
+                    <children>
+                        <Label fx:id="lblToppings" text="Toppings" styleClass="Title"  />
+                        <CheckBox fx:id = "chkCheese" text = "_Cheese"    />
+                        <CheckBox fx:id = "chkPepperoni" text = "_Pepperoni"    />
+                        <CheckBox fx:id = "chkMushrooms" text = "_Mushrooms "   />
+                        <CheckBox fx:id = "chkOlives" text = "_Olives "  />  
+                                                
+                       
+                    </children>
+                
+                </VBox>
+              
+                   
+                <VBox BorderPane.margin="$nodeMargins" styleClass="Border" > 
+                    <padding>
+                        <Insets top ="10" right="10" bottom="10" left="10"/>
+                    </padding>
+                    <Label fx:id="lblDrinsk" text="Drinks" styleClass="Title"   />
+                    <RadioButton fx:id = "optCoke" text = "_Coke" toggleGroup = "$grpSelection2"     />
+                    <RadioButton fx:id = "optJuice" text = "_Juice" toggleGroup = "$grpSelection2"    />
+                    <RadioButton fx:id = "optMilk" text = "_Chocolate Milk " toggleGroup = "$grpSelection2"   />
+                    <TextField fx:id = "txfNOfDrink" promptText="Enter number of drink"  />
+                </VBox>         
+          </HBox>
+    </center>
+    <bottom>
+            <VBox  alignment="CENTER"  >   
+                <padding>
+                    <Insets top ="5" right="0" bottom="5" left="0"/>                            
+                </padding>                  
+                <Label fx:id="lblOrdered" text="Ordered Items" styleClass="Title" />
+                <TextArea fx:id="txaItems" text="" prefHeight="300" prefWidth="575" />                
+                  
+                <HBox alignment="CENTER" spacing = "5" BorderPane.margin="$nodeMargins" >
+                    <padding>
+                        <Insets top ="5" right="30" bottom="5" left="30"/>                            
+                    </padding>  
+                    <Button fx:id="btnOk" text="OK" prefWidth="75" onAction="#order" />
+                    <Button fx:id="btnCancel" text="Cancel" prefWidth="75" onAction="#clear" />
+                </HBox> 
+            </VBox>
+    </bottom>
+    <stylesheets>
+        <URL value = "@CSS.css" />
+    </stylesheets>         
+</BorderPane>
